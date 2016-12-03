@@ -12,7 +12,7 @@ import 'rxjs/add/operator/map';
 export class UserService {
    data: any;
 
-  constructor(private http: Http) {    
+  constructor(public http: Http) {    
     this.data = null;
   }
   
@@ -24,7 +24,7 @@ export class UserService {
 
     // don't have the data yet
     return new Promise(resolve => {
-      this.http.get('https://randomuser.me/api/?results=25')
+      this.http.get('http://127.0.0.1:9000/mascota/api_mascota/?format=json')
         .map(res => res.json())
         .subscribe(data => {
           this.data = data.results;

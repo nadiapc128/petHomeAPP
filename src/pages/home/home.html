@@ -1,7 +1,7 @@
 <ion-header>
   <ion-navbar color="primary">
     <ion-title>
-      Demo 103
+      PetHome - Extraviados
     </ion-title>
   </ion-navbar>
 </ion-header>
@@ -10,10 +10,10 @@
   <ion-list>
     <ion-item *ngFor="let user of users">
       <ion-avatar item-left>
-        <img [src]="user.picture.medium">
+        <img [src]="user.imagen">
       </ion-avatar>
-      <h2>{{ user.name.first | uppercase }}</h2>
-      <p>{{ user.email }}</p>
+      <h2>{{ user.nombre | uppercase }}</h2>
+      <p>{{ user.edad }}</p>
     </ion-item>
   </ion-list>
 </ion-content>
