@@ -24,7 +24,7 @@ export class UserService {
 
     // don't have the data yet
     return new Promise(resolve => {
-      this.http.get('http://randomuser.me/api/?results=25')
+      this.http.get('https://randomuser.me/api/?results=25')
         .map(res => res.json())
         .subscribe(data => {
           this.data = data.results;
