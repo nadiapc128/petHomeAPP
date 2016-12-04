@@ -13,7 +13,8 @@
         <img [src]="user.imagen">
       </ion-avatar>
       <h2>{{ user.nombre | uppercase }}</h2>
-      <p>{{ user.edad }}</p>
+      <p>Raza: {{ user.raza.nombre }}</p>
+      <p>Edad: {{ user.edad }}</p>      
     </ion-item>
   </ion-list>
 </ion-content>
