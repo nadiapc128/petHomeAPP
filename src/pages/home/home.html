@@ -9,12 +9,22 @@
 <ion-content>
   <ion-list>
     <ion-item *ngFor="let user of users">
-      <ion-avatar item-left>
+      <!--<ion-avatar item-left>
         <img [src]="user.imagen">
-      </ion-avatar>
-      <h2>{{ user.nombre | uppercase }}</h2>
-      <p>Raza: {{ user.raza.nombre }}</p>
-      <p>Edad: {{ user.edad }}</p>      
+      </ion-avatar> -->
+      <p><img [src]="user.mascota.imagen"></p> 
+      <h2>{{ user.mascota.nombre | uppercase }}</h2>
+      <p>Se extravió el: {{user.fecha_extravio}}</p>
+      <p>En el sector: {{user.calle_principal}} y {{user.calle_secundaria}} {{user.referencia_de_lugar}} </p>
+      <p>Raza: {{ user.mascota.raza.nombre }}</p>
+      <p>Edad: {{ user.mascota.edad }}</p>      
+      <p>Descripción: {{user.descripcion}}</p>
+      <p>Recompensa: ${{user.recompensa}}
+      <h3>CONTACTO</h3>
+      <p>Dueño: {{user.mascota.user.first_name}} {{user.mascota.user.last_name}}</p>
+      <p>Teléfono: {{user.contacto}} </p>
+      <p>Email: {{user.mascota.user.email}}</p>      
+           
     </ion-item>
   </ion-list>
 </ion-content>
