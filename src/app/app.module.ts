@@ -3,12 +3,14 @@ import { IonicApp, IonicModule } from 'ionic-angular';
 import { MyApp } from './app.component';
 import {UserService} from '../providers/user-service';
 import { HomePage } from '../pages/home/home';
+import { InicioPage } from '../pages/inicio/inicio';
 
 
 @NgModule({
   declarations: [
     MyApp,    
-    HomePage
+    HomePage,
+    InicioPage
     
   ],
   imports: [
@@ -17,7 +19,8 @@ import { HomePage } from '../pages/home/home';
   bootstrap: [IonicApp],
   entryComponents: [
     MyApp,    
-    HomePage
+    HomePage,
+    InicioPage
     
   ],
   providers: [UserService]

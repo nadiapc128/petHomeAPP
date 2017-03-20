@@ -1,6 +1,8 @@
 import { Injectable } from '@angular/core';
+import { NavController, Platform } from 'ionic-angular';
 import { Http } from '@angular/http';
 import 'rxjs/add/operator/map';
+import { Constants } from '../util/constants';
 
 /*
   Generated class for the UserService provider.
@@ -11,23 +13,24 @@ import 'rxjs/add/operator/map';
 @Injectable()
 export class UserService {
    data: any;
-
-  constructor(public http: Http) {    
-    this.data = null;
+   SERVER_IP: string;
+   
+  constructor(
+    public http: Http,
+    public navCtrl: NavController,
+    public platform: Platform,
+    public constants: Constants
+    ){      
+      this.data = null;
+      this.SERVER_IP = constants.SERVER_IP;
   }
   
-  load() {
-    if (this.data) {
-      // already loaded data
-      return Promise.resolve(this.data);
-    }
-
-    // don't have the data yet
+ public getExtraviado(){    
     return new Promise(resolve => {
-      this.http.get('http://127.0.0.1:9000/mascota/api_mascota/?format=json')
+      this.http.get(this.SERVER_IP + '/mascota/api_mascota/')
         .map(res => res.json())
         .subscribe(data => {
-          this.data = data.results;
+          this.data = data                
           resolve(this.data);
         });
     });
