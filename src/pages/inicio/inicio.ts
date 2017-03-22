@@ -22,7 +22,7 @@ export class InicioPage {
 
   goToHome(){
     console.log('seeee');
-    this.navCtrl.push(HomePage)
+    this.navCtrl.push(HomePage);
   }
 
 }

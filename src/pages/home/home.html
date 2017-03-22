@@ -9,28 +9,13 @@
 <ion-content>
   <ion-list>    
     <ion-item *ngFor="let pet of mascotas">
-      <ion-avatar item-left>
+      <ion-thumbnail item-left>
         <img src="{{pet.mascota.imagen}}">
-      </ion-avatar>      
+      </ion-thumbnail>      
       <h2>{{ pet.mascota.nombre }}</h2>
-      <h3>{{ pet.mascota.raza.nombre }}</h3>
-      <h3>Se extravión el: {{ pet.fecha_extravio }}</h3>
-      <!--<ion-avatar item-left>
-        <img [src]="user.imagen">
-      </ion-avatar> -->
-      <!--<p><img [src]="user.mascota.imagen"></p>
-      <p>{{user.mascota.imagen}}</p> 
-      <h2>{{ user.mascota.nombre | uppercase }}</h2>
-      <p>Se extravió el: {{user.fecha_extravio}}</p>
-      <p>En el sector: {{user.calle_principal}} y {{user.calle_secundaria}} {{user.referencia_de_lugar}} </p>
-      <p>Raza: {{ user.mascota.raza.nombre }}</p>
-      <p>Edad: {{ user.mascota.edad }}</p>      
-      <p>Descripción: {{user.descripcion}}</p>
-      <p>Recompensa: ${{user.recompensa}}
-      <h3>CONTACTO</h3>
-      <p>Dueño: {{user.mascota.user.first_name}} {{user.mascota.user.last_name}}</p>
-      <p>Teléfono: {{user.contacto}} </p>
-      <p>Email: {{user.mascota.user.email}}</p>      -->
+      <p>{{ pet.mascota.raza.nombre }}</p>
+      <p>Se extravión el: {{ pet.fecha_extravio }}</p>
+      <button ion-button clear item-right (click)="detalleMascota(pet)">Ver</button>     
            
     </ion-item>
   </ion-list>

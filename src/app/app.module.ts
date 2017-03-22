@@ -4,13 +4,15 @@ import { MyApp } from './app.component';
 import {UserService} from '../providers/user-service';
 import { HomePage } from '../pages/home/home';
 import { InicioPage } from '../pages/inicio/inicio';
+import { DetallePage } from '../pages/detalle/detalle';
 
 
 @NgModule({
   declarations: [
     MyApp,    
     HomePage,
-    InicioPage
+    InicioPage,
+    DetallePage
     
   ],
   imports: [
@@ -20,7 +22,8 @@ import { InicioPage } from '../pages/inicio/inicio';
   entryComponents: [
     MyApp,    
     HomePage,
-    InicioPage
+    InicioPage,
+    DetallePage
     
   ],
   providers: [UserService]

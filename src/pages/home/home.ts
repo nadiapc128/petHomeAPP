@@ -1,8 +1,8 @@
 import { Component } from '@angular/core';
-
 import { NavController } from 'ionic-angular';
 import {UserService} from '../../providers/user-service';
 import { Constants } from '../../util/constants';
+import { DetallePage } from '../detalle/detalle';
 
 @Component({
   selector: 'page-home',
@@ -30,6 +30,11 @@ export class HomePage {
         data[mascotas].mascota.imagen = data[mascotas].mascota.imagen.replace('https://www.pethomeloja.tk,www.pethomeloja.tk', this.SERVER_IP)
       }
     }) ;
+  }
+
+  detalleMascota(id_mascota){
+    console.log(id_mascota);
+    this.navCtrl.push(DetallePage, {mascota: id_mascota});
   }
 
 }

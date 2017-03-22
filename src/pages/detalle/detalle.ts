@@ -1,5 +1,7 @@
 import { Component } from '@angular/core';
-import { NavController } from 'ionic-angular';
+import { NavController, NavParams } from 'ionic-angular';
+import {UserService} from '../../providers/user-service';
+import { Constants } from '../../util/constants';
 
 /*
   Generated class for the Detalle page.
@@ -7,16 +9,28 @@ import { NavController } from 'ionic-angular';
   See http://ionicframework.com/docs/v2/components/#navigation for more info on
   Ionic pages and navigation.
 */
+declare var window;
 @Component({
   selector: 'page-detalle',
-  templateUrl: 'detalle.html'
+  templateUrl: 'detalle.html',
+  providers: [UserService, Constants]
 })
 export class DetallePage {
+  mascota: any;
+  detalle: any={};  
+  SERVER_IP: string;
 
-  constructor(public navCtrl: NavController) {}
+  constructor(
+    public navCtrl: NavController,
+    public userService: UserService,
+    public navParams: NavParams,
+    public constants: Constants) {
 
-  ionViewDidLoad() {
-    console.log('Hello DetallePage Page');
-  }
+      this.SERVER_IP = constants.SERVER_IP;
+      this.mascota = this.navParams.get('mascota');
+      console.log(this.mascota);
+
+    }
+  
 
 }

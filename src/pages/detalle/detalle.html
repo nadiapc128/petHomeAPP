@@ -7,12 +7,61 @@
 <ion-header>
 
   <ion-navbar>
-    <ion-title>detalle</ion-title>
+    <ion-title>Detalles</ion-title>
   </ion-navbar>
 
 </ion-header>
 
-
 <ion-content padding>
+  <ion-card>
+    <ion-item>
+        <h2>Si lo viste, contáctate con: {{ mascota.mascota.user.first_name }}</h2>
+        <p>{{ mascota.mascota.user.email }}</p>        
+
+    </ion-item>
+    <img src="{{ mascota.mascota.imagen }}"/>
+    <ion-card-content>
+
+      <ion-item>
+        <ion-icon name="paw" item-left></ion-icon>
+        <h3>Nombre</h3>
+        <p>{{ mascota.mascota.nombre }}</p>        
+      </ion-item>
+
+      <ion-item>
+        <ion-icon name="star" item-left></ion-icon>
+        <h3>Raza</h3>
+        <p>{{ mascota.mascota.raza.nombre }}</p>
+      </ion-item>
+
+      <ion-item>
+        <ion-icon name="bowtie" item-left></ion-icon>
+        <h3>Edad</h3>
+        <p>{{ mascota.mascota.edad }}</p>
+      </ion-item>
+
+      <ion-item>
+        <ion-icon name="flag" item-left></ion-icon>
+        <h3>Descripción</h3>
+        <p>{{ mascota.descripcion }}</p>
+      </ion-item>
+
+      <ion-item>
+        <ion-icon name="calendar" item-left></ion-icon>
+        <h3>Se extravió el día:</h3>
+        <p>{{ mascota.fecha_extravio }}</p>
+      </ion-item>
+
+      <ion-item>
+        <ion-icon name="pin" item-left></ion-icon>
+        <h3>Por el sector de:</h3>
+        <p>{{ mascota.calle_principal }}</p>
+        <p>{{ mascota.calle_secundaria }}</p>
+        <p>{{ mascota.referencia_de_lugar }}</p>
+      </ion-item>     
+      
+      
+  </ion-card-content>
+  </ion-card>
 
 </ion-content>
